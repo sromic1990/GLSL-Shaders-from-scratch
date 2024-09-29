@@ -1,0 +1,15 @@
+# Ignore GLSL shaders
+*.glsl
+*.vert
+*.frag
+*.geom
+*.tesc
+*.tese
+*.comp
+
+# Ignore VSCode-specific files
+.vscode/
+*.code-workspace
+
+# Ignore anything in the "Downloads" folder
+Downloads/
