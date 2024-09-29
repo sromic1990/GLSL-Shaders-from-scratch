@@ -1,7 +1,13 @@
 varying vec2 vUvs;
 
+uniform vec4 color1;
+uniform vec4 color2;
+
 void main()
 {
-    //gl_FragColor = vec4(vUvs, 0.0, 1.0);
-    gl_FragColor = vec4(1.0 - vUvs.x, 0.0, 1.0 - vUvs.y, 1.0);
+    gl_FragColor = mix(
+        color1,
+        color2,
+        vUvs.x
+    );
 }
