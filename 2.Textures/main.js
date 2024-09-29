@@ -31,15 +31,19 @@ class SimpleGLSL
         const vsh = await fetch('./shaders/vertex-shader.glsl');
         const fsh = await fetch('./shaders/fragment-shader.glsl');
 
+        const loader = new THREE.TextureLoader();
+        const dogTexture = loader.load('./textures/dog.jpg');
+
+        const geometry = new THREE.PlaneGeometry(1,1);
         const material = new THREE.ShaderMaterial(
             {
-                uniforms:{},
+                uniforms:{
+                    diffuse: {value : dogTexture},
+                },
                 vertexShader: await vsh.text(),
                 fragmentShader: await fsh.text()
             }
         );
-
-        const geometry = new THREE.PlaneGeometry(1,1);
 
         const plane = new THREE.Mesh(geometry, material);
         plane.position.set(0.5, 0.5, 0);
