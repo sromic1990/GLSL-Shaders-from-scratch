@@ -1,4 +1,7 @@
+attribute vec3 devColors;
+
 varying vec2 vUvs;
+varying vec3 vColor;
 
 void main()
 {
@@ -6,4 +9,5 @@ void main()
 
     gl_Position = projectionMatrix * modelViewMatrix * localPosition;
     vUvs = uv;
+    vColor = devColors;
 }
